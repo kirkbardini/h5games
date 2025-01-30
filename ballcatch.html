@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Apple</title>
+    <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script src="ads.js" defer></script>
+    <script src="game.js" defer></script>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        canvas { background: #87CEEB; display: block; margin: 0 auto; }
+        #startGameBtn, #restartBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #restartBtn {
+            display: none;
+            position: relative;
+            margin: auto;
+        }
+        #adContainer {
+            width: 640px;  
+            height: 480px; 
+            background: black;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #gameWrapper {
+            position: relative;
+            width: 640px;
+            height: 480px;
+            margin: auto;
+        }
+        #adContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            z-index: 10; /* Ensure ad is above the game */
+        }              
+    </style>
+</head>
+<body>
+    <h1>Catch the AppView's ball</h1>
+    <button id="restartBtn" onclick="restartGame()">Restart</button>
+    <button id="startGameBtn">Start Game</button>
+    <div id="gameWrapper">
+        <div id="adContainer"></div> <!-- Ad overlays the canvas -->
+        <canvas id="gameCanvas" width="640" height="480"></canvas>
+    </div>
+</body>
+
+</html>
